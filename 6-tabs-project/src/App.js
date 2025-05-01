@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
-const url = "http://course-api.netlify.app/api/react-tabs-project";
+const url =
+  "https://cors-anywhere.herokuapp.com/http://course-api.com/react-tabs-project";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -25,8 +26,22 @@ const App = () => {
       </section>
     );
   }
-
-  return <h2>tabs project setup</h2>;
+  const { company, dates, duties, title } = jobs[value];
+  return (
+    <section className="section">
+      <div className="title">
+        <h2>Experience</h2>
+        <div className="underline"></div>
+      </div>
+      <div className="jobs-center">
+        {/* {btn container} */}
+        {/* {job info} */}
+        <article className="job-info">
+          <h3>{title}</h3>
+        </article>
+      </div>
+    </section>
+  );
 };
 
 export default App;
